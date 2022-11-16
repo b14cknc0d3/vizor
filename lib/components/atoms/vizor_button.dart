@@ -132,7 +132,7 @@ class VizorButton extends StatelessWidget {
     final splashColor = color.withOpacity(0.3);
 
     if (icon == null) {
-      return FlatButton(
+      return MaterialButton(
         onPressed: () => _onPressed(context),
         highlightColor: color,
         splashColor: splashColor,
@@ -150,15 +150,14 @@ class VizorButton extends StatelessWidget {
         icon: icon,
       );
     } else {
-      return FlatButton.icon(
+      return MaterialButton(
         onPressed: () => _onPressed(context),
         highlightColor: color,
         splashColor: splashColor,
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         padding: padding ?? theme.padding,
         textColor: textColor ?? theme.textColor,
-        icon: icon,
-        label: label,
+        child: icon,
       );
     }
   }
